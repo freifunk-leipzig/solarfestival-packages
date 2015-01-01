@@ -1,0 +1,12 @@
+{
+    "tracertools": {
+        "title": "TracerTools",
+        "index": 40
+    },
+    "tracertools/overview": {
+        "title": "Overview",
+        "acls": [ "status" ],
+        "view": "tracertools/overview",
+        "index": 10
+    }
+}
