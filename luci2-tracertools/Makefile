@@ -28,7 +28,7 @@ define Package/luci2-tracertools
 endef
 
 define Package/luci2-tracertools/description
- Provides the LuCI2 module for Solar Charge Controllers (tracers).
+ Provides the LuCI2 module for Solar Charge Controllers
 endef
 
 define Package/luci2-tracertools/install
