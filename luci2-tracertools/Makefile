@@ -18,8 +18,6 @@ PKG_BUILD_PARALLEL:=1
 include $(INCLUDE_DIR)/package.mk
 
 define Build/Prepare
-	$(INSTALL_DIR) $(PKG_BUILD_DIR)
-	$(CP) ./src/* $(PKG_BUILD_DIR)/
 endef
 
 define Package/luci2-tracertools
