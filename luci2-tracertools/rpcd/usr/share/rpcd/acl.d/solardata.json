@@ -1,0 +1,12 @@
+{
+        "solardata": {
+                "description": "Access controls to fetch solar data via alfred",
+                "read": {
+                        "ubus": {
+                                "solardata": [
+                                        "solardata"
+                                ]
+                        }
+                }
+        }
+}
