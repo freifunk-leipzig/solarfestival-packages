@@ -43,7 +43,7 @@ define Package/luci2-tracertools/install
 	$(INSTALL_DIR) $(1)/www
 	$(CP) ./htdocs/* $(1)/www/
 	$(INSTALL_DIR) $(1)
-	$(CP) ./ubus/* $(1)/
+	$(CP) ./rpcd/* $(1)/
 endef
 
 define Package/luci2-tracertools/postinst
