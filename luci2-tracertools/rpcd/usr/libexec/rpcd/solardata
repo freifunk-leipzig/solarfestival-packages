@@ -2,11 +2,13 @@
 
 case "$1" in
 	list)
-		echo '{ "solardata": { } }'
+		echo '{ "alfred": { "type": 32 } }'
 	;;
 	call)
+		read json
+		
 		echo '{'
-		alfred -r 160 | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
+		alfred -r "$(jsonfilter -e '@.type' -s "$json")" | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
 		#cat /root/solardata.json | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
 		echo '}'
 	;;
