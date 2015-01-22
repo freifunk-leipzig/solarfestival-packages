@@ -8,7 +8,7 @@ case "$1" in
 		read json
 		
 		echo '{'
-		alfred -r "$(jsonfilter -e '@.type' -s "$json")" | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
+		alfred -r "$(jsonfilter -s "$json" -e '@.type')" | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
 		#cat /root/solardata.json | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
 		echo '}'
 	;;
