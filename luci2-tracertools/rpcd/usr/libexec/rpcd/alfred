@@ -2,7 +2,7 @@
 
 case "$1" in
 	list)
-		echo '{ "alfred": { "type": 32 } }'
+		echo '{ "dump": { "type": 32 } }'
 	;;
 	call)
 		read json
