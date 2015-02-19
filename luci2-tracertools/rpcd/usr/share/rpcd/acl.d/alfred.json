@@ -1,5 +1,5 @@
 {
-        "alfred": {
+        "unauthenticated": {
                 "description": "Alfred data types via batman-adv meshrouting",
                 "read": {
                         "ubus": {
