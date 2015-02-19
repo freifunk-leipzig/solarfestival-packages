@@ -1,0 +1,12 @@
+{
+        "alfred": {
+                "description": "Access controls to fetch alfred data types",
+                "read": {
+                        "ubus": {
+                                "alfred": [
+                                        "dump"
+                                ]
+                        }
+                }
+        }
+}
