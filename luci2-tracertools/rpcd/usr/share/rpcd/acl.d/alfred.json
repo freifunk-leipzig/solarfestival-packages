@@ -1,6 +1,6 @@
 {
         "alfred": {
-                "description": "Access controls to fetch alfred data types",
+                "description": "Alfred data types via batman-adv meshrouting",
                 "read": {
                         "ubus": {
                                 "alfred": [
