@@ -1,0 +1,28 @@
+#!/bin/sh
+
+case "$1" in
+	list)
+		cat <<-EOF
+		{
+			"dump": { "type": 32 },
+			"test": { }
+		}
+		EOF
+	;;
+	call)
+		read json
+		
+		case "$2" in
+			dump)
+				echo "{"
+				alfred -r "$(jsonfilter -s "$json" -e '@.type')" | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\\\x/g; $s/,$//'
+				#cat /root/solardata.json | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
+				echo "}"
+			;;
+			*)
+				echo '{ "error": "Unknown method" }'
+			;;
+		esac
+	;;
+esac
+
