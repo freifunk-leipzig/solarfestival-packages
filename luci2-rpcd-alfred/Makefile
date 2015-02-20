@@ -6,7 +6,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=luci2-rpcd-alfred
+PKG_NAME:=rpcd-mod-alfred
 PKG_VERSION:=$(shell git --git-dir=$(CURDIR)/../.git log -1 --pretty="%ci %h" | awk '{ print $$1 "-" $$4 }')
 PKG_MAINTAINER:=Ufo <ufo@rund.freifunk.net>
 
@@ -20,14 +20,14 @@ PKG_LICENSE_FILES:=
 include $(INCLUDE_DIR)/package.mk
 
 
-define Package/luci2-rpcd-alfred
-  SECTION:=luci2
-  CATEGORY:=LuCI2
-  TITLE:=LuCI2 rpcd Alfred for batman-adv meshrouting
+define Package/rpcd-mod-alfred
+  SECTION:=utils
+  CATEGORY:=Base system
+  TITLE:=OpenWrt ubus RPC backend server (alfred plugin)
   DEPENDS:=+rpcd
 endef
 
-define Package/luci2-rpcd-alfred/description
+define Package/rpcd-mod-alfred/description
  Provides the rpcd via ubus for alfred data types used in batman-adv mesh
 endef
 
@@ -39,17 +39,9 @@ define Build/Compile
 endef
 
 
-define Package/luci2-rpcd/install
+define Package/rpcd-mod-alfred/install
 	$(INSTALL_DIR) $(1)
 	$(CP) ./rpcd/* $(1)/
 endef
 
-define Package/luci2-rpcd-alfred/postinst
-#!/bin/sh
-
-echo postinstall luci2-rpcd-alfred
-
-exit 0
-endef
-
-$(eval $(call BuildPackage,luci2-rpcd-alfred))
+$(eval $(call BuildPackage,rpcd-mod-alfred))
