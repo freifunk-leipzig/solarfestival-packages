@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo
+echo "<html><pre>"
+#echo Content-Type: text/html
+echo Freifunk Node
+uci show system.system.hostname
+echo "<a href=/luci2.html>Admin via luci2</a>" 
+echo ---
+neigh.sh  | sed -e 's|10.[^ \t]*|<a href="http://&/cgi-bin-status.html">&</a>|g'
+
