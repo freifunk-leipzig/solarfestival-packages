@@ -24,7 +24,7 @@ define Package/luci2-freifunk-status-olsr
   SECTION:=luci2
   CATEGORY:=LuCI2
   TITLE:=LuCI2 Status Freifunk OLSR
-  DEPENDS:=+luci2
+  DEPENDS:=
 endef
 
 define Package/luci2-freifunk-status-olsr/description
