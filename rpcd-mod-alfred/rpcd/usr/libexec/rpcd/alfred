@@ -22,7 +22,7 @@ case "$1" in
 			;;
 			dumpjsonunzip)
 				#echo "{"
-				alfred-json -z -r "$(jsonfilter -s "$json" -e '@.type')" | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\\\x/g; $s/,$//'
+				alfred-json -f string -z -r "$(jsonfilter -s "$json" -e '@.type')" | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\\\x/g; $s/,$//'
 				#cat /root/solardata.json | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
 				#echo "}"
 			;;
