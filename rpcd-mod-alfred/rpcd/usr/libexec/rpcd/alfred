@@ -5,6 +5,7 @@ case "$1" in
 		cat <<-EOF
 		{
 			"dump": { "type": 32 },
+			"dumpjsonunzip": { "type": 32 },
 			"test": { }
 		}
 		EOF
@@ -18,6 +19,12 @@ case "$1" in
 				alfred -r "$(jsonfilter -s "$json" -e '@.type')" | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\\\x/g; $s/,$//'
 				#cat /root/solardata.json | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
 				echo "}"
+			;;
+			dumpjsonunzip)
+				#echo "{"
+				alfred-json -f string -z -r "$(jsonfilter -s "$json" -e '@.type')" | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\\\x/g; $s/,$//'
+				#cat /root/solardata.json | sed -e 's/^{ \(".*"\), \(".*"\) },$/\1: \2,/g; s/\\x/\\u00/g; $s/,$//'
+				#echo "}"
 			;;
 			*)
 				echo '{ "error": "Unknown method" }'
