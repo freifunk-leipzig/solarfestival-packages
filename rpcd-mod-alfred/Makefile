@@ -24,7 +24,7 @@ define Package/rpcd-mod-alfred
   SECTION:=utils
   CATEGORY:=Base system
   TITLE:=OpenWrt ubus RPC backend server (alfred plugin)
-  DEPENDS:=+rpcd
+  DEPENDS:=+rpcd +alfred-json
 endef
 
 define Package/rpcd-mod-alfred/description
