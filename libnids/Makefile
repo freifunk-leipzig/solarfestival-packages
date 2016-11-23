@@ -45,7 +45,7 @@ TARGET_CFLAGS += $(FPIC)
 
 define Build/Compile
 	$(MAKE) -C $(PKG_BUILD_DIR) \
-		LNETLIB="-L$(STAGING_DIR)/usr/lib/libnet-1.0.x/lib -lnet" \
+		LNETLIB="-L$(STAGING_DIR)/usr/lib/libnet-1.2.x/lib -lnet" \
 		PCAPLIB="$(TARGET_LDFLAGS) -lpcap" \
 		install_prefix="$(PKG_INSTALL_DIR)" \
 		all install
