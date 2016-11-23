@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libnids
 PKG_VERSION:=1.18
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://www.packetfactory.net/projects/libnids/dist/
@@ -34,7 +34,7 @@ define Build/Configure
 	$(call Build/Configure/Default, \
 		--enable-shared \
 		--enable-static \
-		--with-libnet="$(STAGING_DIR)/usr/lib/libnet-1.0.x" \
+		--with-libnet="$(STAGING_DIR)/usr/lib/libnet-1.2.x" \
 		--with-libpcap="$(STAGING_DIR)/usr" \
 		, \
 		CFLAGS="$$$$CFLAGS $$$$CPPFLAGS" \
