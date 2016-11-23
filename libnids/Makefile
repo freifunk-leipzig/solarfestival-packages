@@ -20,7 +20,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/libnids
   SECTION:=libs
   CATEGORY:=Libraries
-  DEPENDS:=+libnet0
+  DEPENDS:=+libnet
   TITLE:=A network intrusion detection library
   URL:=http://www.packetfactory.net/projects/libnids/
 endef
